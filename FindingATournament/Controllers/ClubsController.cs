@@ -22,7 +22,7 @@ namespace FindingATournament.Controllers
         //temporalmente en el repositorio de clubs.
         
         // Aqui devuelve todos los clubs empaquetados en formato JSON
-        [HttpGet, Route("getClubs")]
+        [HttpGet, Route("GetClubs")]
         public async Task<IActionResult> GetClubs()
         {
             var clubs = await _service.GetAllClub();
@@ -30,7 +30,7 @@ namespace FindingATournament.Controllers
         }
 
         // Aqui devuelve el primer club empaquetado en formato JSON
-        [HttpGet,Route("getFirstClub")]
+        [HttpGet,Route("GetFirstClub")]
         public async Task<IActionResult> GetClub()
         {
             var firstClub = await _service.GetFirstClub();

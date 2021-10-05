@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FindingATournament.Entities;
 using FindingATournament.Interfaces;
 using FindingATournament.Repositories;
 using FindingATournament.Services;
@@ -34,6 +35,8 @@ namespace FindingATournament
             services.AddTransient<IClubService, ClubService>(); // CLUBS
             services.AddSingleton<ITorneoRepository, TorneoRepository>(); // TORNEOS
             services.AddTransient<ITorneoService, TorneoService>(); // TORNEOS
+            services.AddSingleton<IServicioClubRepository, ServicioClubRepository>();
+            services.AddTransient<IServicioClubService, ServicioClubService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "FindingATournament", Version = "v1"});
